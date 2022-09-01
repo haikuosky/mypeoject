@@ -53,6 +53,6 @@ git reset HEAD file
 git reset HEAD .    // 将所有文件从暂存区移除，上面是指定单个文件移除
 
 git commit -m "comment" // 提交已暂存的文件
-git commit -a -m "comment"  // 一般的流程是先把文件添加到暂存区再提交到仓库，加上 -a 则可以跳过添加到暂存区这环节，直接将跟踪且修改了的文件提交到仓库
+git commit -a -m "comment"  // 一般的流程是先把文件添加到暂存区再提交到仓库，加上 -a 则可以跳过添加到暂存区这环节，直接将跟踪（不包括未跟踪的）且修改了的文件提交到仓库
 
 git checkout -- file  撤销对文件的修改
