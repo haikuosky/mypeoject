@@ -75,3 +75,8 @@ git log -3 --pretty=format:"%h | %an | %ar | %s"  // 一行展示且规范格式
 
 git reset --hard id // 切换到某个版本
 git reflog --pretty=oneline // 如果用 log，只会显示切换的那个版本和之前的版本历史，reflog 则能显示所有历史版本
+
+GPL、MIT
+开源的好处：使用者拥有更多的控制权、让学习更容易、更加安全
+
+github远程仓库访问的：https和ssh
