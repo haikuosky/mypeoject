@@ -56,3 +56,22 @@ git commit -m "comment" // 提交已暂存的文件
 git commit -a -m "comment"  // 一般的流程是先把文件添加到暂存区再提交到仓库，加上 -a 则可以跳过添加到暂存区这环节，直接将跟踪（不包括未跟踪的）且修改了的文件提交到仓库
 
 git checkout -- file  撤销对文件的修改
+
+git rm -f file
+git rm --cached file    // -f 是从工作区和仓库里都移除， -cached 是只从仓库中移除，移除之后还是需要提交
+
+.gitignore 文件可以让 git 忽略某些符合条件的文件或文件夹，不会跟踪和记录它们
+里面的格式规范：
+\#开头 注释
+/开头 不递归，当前目录下的文件或文件夹
+/结尾 表示目录
+!开头 取反，表示不忽略
+另外还有glob匹配模式：*表示任意个字符，?[abc][0-9]和正则一样，**表示匹配任意中间目录，如dira/\*\*/dirz表示dira/dirb/dirz或dira/dirz或dira/dirb/dirc/dirz等都可以
+
+git log
+git log -3
+git log -3 --pretty=oneline   // 在一行展示每次提交的更新记录
+git log -3 --pretty=format:"%h | %an | %ar | %s"  // 一行展示且规范格式，%h 提交的简写哈希值 %an作者 %ar修订时间 %s提交说明。如 2fb267e | zhk | 23 hours ago | change git.md
+
+git reset --hard id // 切换到某个版本
+git reflog --pretty=oneline // 如果用 log，只会显示切换的那个版本和之前的版本历史，reflog 则能显示所有历史版本
