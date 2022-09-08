@@ -80,3 +80,6 @@ GPL、MIT
 开源的好处：使用者拥有更多的控制权、让学习更容易、更加安全
 
 github远程仓库访问的：https和ssh
+https: 
+git remote add origin https://github.com/haikuosky/mypeoject.git  //远程创建
+git push -u origin main
